@@ -9,7 +9,7 @@ SELECT
     to_char(AVG((nvl(commission_pct, 0) * salary) + salary ) - MIN((nvl(commission_pct, 0) *salary) + salary ), '$99,999.99') AS "Real Amount" 
 FROM
     employees;       
-
+  
 -- Question 2
 SELECT
     department_id,
