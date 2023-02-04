@@ -1,0 +1,47 @@
+// --------------------
+// DBS311 - Week 11 - MongoDB – Query
+// LAB8
+// Name: Saetbyeol Lim
+// Student No: 149814212
+// 1 DEC, 2022
+// --------------------
+show dbs;
+
+use inventory;
+
+db.products.find();
+
+
+//Q1.
+db.products.find({}, {"_id":0, "name":1, "price":1});
+
+//Q2.
+db.products.find({"type":"accessory"},{"_id":0,"name":1,"price":1});
+
+//Q3.
+db.products.find({"price": {"$gte":13, "$lte":19}},{"_id":0,"name":1,"price":1});
+
+//Q4.
+db.products.find({type:{$ne:["accessory"]}},{"_id":1,"name":1,"price":1});
+
+//Q5.
+db.products.find({"$or":[{type:"accessory"}, {type:"service"}]},{"_id":1,"name":1,"price":1});
+
+//Q6.
+db.products.find({"type":{$exists:1}}, {"_id":1,"name":1,"price":1, "type":1});
+
+//Q7.
+db.products.find({"type":{$all:["accessory", "case"]}}, {"_id":1,"name":1,"price":1, "type":1});
+
+//Q8.
+//We cannot say which one is better than other because it depends on situation. But, in my own words, I like MongoDB than relational database. It is more straightforward and it have flexible documents schemas. 
+
+
+
+
+
+
+
+
+
+
